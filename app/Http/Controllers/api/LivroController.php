@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\LivroResource;
-use app\Models\Livro;
+use App\Models\Livro;
 
 class LivroController extends Controller
 {

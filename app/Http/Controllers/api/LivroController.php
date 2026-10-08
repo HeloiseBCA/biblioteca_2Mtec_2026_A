@@ -25,5 +25,7 @@ class LivroController extends Controller
     public function show(string $id)
     {
         //
+        $livro = Livro::findOrFail($id);
+        return new LivroResource($livro);
     }
 }

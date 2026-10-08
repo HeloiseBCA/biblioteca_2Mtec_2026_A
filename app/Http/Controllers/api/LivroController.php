@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\LivroResource;
+use app\Models\Livro;
 
 class LivroController extends Controller
 {
@@ -12,6 +14,8 @@ class LivroController extends Controller
     public function index()
     {
         //
+        $livros = Livro::query()->paginate(10);
+        return LivroResource::collection($livros);
     }
 
 

@@ -7,10 +7,16 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
+/**
+ * Testes dos endpoints da API de livros.
+ */
 class LivroApiTest extends TestCase
 {
     use RefreshDatabase;
 
+    /**
+     * Verifica se a API exige autenticação.
+     */
     public function test_livros_endpoint_requires_authentication(): void
     {
         $response = $this->getJson('/api/livros');
@@ -18,6 +24,9 @@ class LivroApiTest extends TestCase
         $response->assertUnauthorized();
     }
 
+    /**
+     * Verifica se um usuário autenticado pode listar livros.
+     **/
     public function test_authenticated_user_can_list_livros(): void
     {
         $user = User::factory()->create();
@@ -54,6 +63,9 @@ class LivroApiTest extends TestCase
         $response->assertJsonMissingPath('data.0.updated_at');
     }
 
+    /**
+     * Verifica se um usuário autenticado pode consultar um livro.
+     */
     public function test_authenticated_user_can_show_a_livro(): void
     {
         $user = User::factory()->create();
@@ -81,6 +93,9 @@ class LivroApiTest extends TestCase
         $response->assertJsonMissingPath('data.updated_at');
     }
 
+    /**
+     * Verifica se a API retorna 404 para um livro inexistente.
+     */
     public function test_authenticated_user_gets_not_found_for_nonexistent_livro(): void
     {
         $user = User::factory()->create();

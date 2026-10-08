@@ -15,9 +15,9 @@ class LivroController extends Controller
     {
         //
         $livros = Livro::query()->paginate(10);
+
         return LivroResource::collection($livros);
     }
-
 
     /**
      * Display the specified resource.
@@ -26,6 +26,7 @@ class LivroController extends Controller
     {
         //
         $livro = Livro::findOrFail($id);
+
         return new LivroResource($livro);
     }
 }

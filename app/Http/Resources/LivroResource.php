@@ -5,6 +5,9 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * Resource responsável por formatar os dados dos livros na API.
+ */
 class LivroResource extends JsonResource
 {
     /**

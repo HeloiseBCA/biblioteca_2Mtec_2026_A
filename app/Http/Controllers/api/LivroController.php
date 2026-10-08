@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\LivroResource;
 use App\Models\Livro;
 
+/**
+ * Controller responsável pelos endpoints de consulta de livros.
+ */
 class LivroController extends Controller
 {
     /**

@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Model responsável pelos dados dos livros.
+ */
 class Livro extends Model
 {
     //
@@ -20,6 +23,9 @@ class Livro extends Model
         'LVRFAIXAETARIA',
     ];
 
+    /**
+     * Define os tipos dos atributos do livro.
+     */
     protected function casts(): array
     {
         return [
